@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionController < ApplicationController
     # no auth needed to login
     skip_before_action :authorize, only: [:create]
     
