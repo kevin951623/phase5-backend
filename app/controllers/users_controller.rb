@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
 
-        # # no auth needed to create a new user
-        # skip_before_action :authorize, only: [:index, :create, :me, :show]
+        # no auth needed to create a new user
+        skip_before_action :authorize, only: [:index, :create, :me, :show]
     
         def index
             users = User.all
             render json: users
         end
+
+        #show a user with bets
+        def show
+            users = User.find(params[:id])
+            render json: users, serializer: UserWithBetsSerializer 
+        end
+
     
         # Sign Up Feature
         def create

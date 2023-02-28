@@ -1,12 +1,13 @@
 class BetsController < ApplicationController
-    skip_before_action :authorize, only: [:index, :create, :destroy]
+    # skip_before_action :authorize, only: [:index, :create, :destroy]
     
-
+    #show all bets
     def index
         bets = Bet.all
         render json: bets
     end
 
+    #create a new bet
     def create
         bet = Bet.create!(bet_tranasaction_params)
         render json: bet, status: :created

@@ -26,10 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_164158) do
   create_table "games", force: :cascade do |t|
     t.string "team1_name"
     t.integer "team1_score"
-    t.boolean "team1_status"
     t.string "team2_name"
     t.integer "team2_score"
-    t.boolean "team2_status"
+    t.boolean "game_status"
+    t.boolean "winner"
     t.string "sports"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

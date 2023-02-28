@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   get "/bets", to: "bets#index"
 
-  post '/users/:id/watchlist_records', to: 'watchlist_records#create'
   # Defines the root path route ("/")
   # root "articles#index"
 end
