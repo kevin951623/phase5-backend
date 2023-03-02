@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/login", to: "session#create" 
   delete "/logout", to: "session#destroy"
 
-  get "/bets", to: "bets#index"
+  # get "/bets", to: "bets#index"
 
   # Defines the root path route ("/")
   # root "articles#index"

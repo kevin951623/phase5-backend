@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
         # no auth needed to create a new user
-        skip_before_action :authorize, only: [:index, :create, :me, :show]
+        # skip_before_action :authorize, only: [:index, :create, :me, :show]
     
         def index
             users = User.all
@@ -27,7 +27,12 @@ class UsersController < ApplicationController
     
         # Auto-login Feature
         def me
-                render json: current_user, status: :ok
+            render json: current_user, status: :ok
+            # if current_user
+            #     user = User.find(params[:id])
+            # else
+            #     render json: current_user, status: :ok
+            # end
         end
         
         #Update user balance
@@ -41,7 +46,7 @@ class UsersController < ApplicationController
         private
     
         def user_params
-            params.permit(:name, :username, :password)
+            params.permit(:name, :username, :password, :email)
         end
 
         def update_balance_params   

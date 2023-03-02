@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
     # no auth needed to login
-    skip_before_action :authorize, only: [:create]
+    # skip_before_action :authorize, only: [:create]
     
     # Login feature
     def create
