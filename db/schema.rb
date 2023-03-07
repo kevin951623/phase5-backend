@@ -14,8 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_164158) do
   create_table "bets", force: :cascade do |t|
     t.integer "transactions"
     t.float "bet_amount"
-    t.float "team1_odds"
-    t.float "team2_odds"
     t.float "payout"
     t.integer "user_id"
     t.integer "game_id"
@@ -26,8 +24,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_164158) do
   create_table "games", force: :cascade do |t|
     t.string "team1_name"
     t.integer "team1_score"
+    t.float "team1_odds"
     t.string "team2_name"
     t.integer "team2_score"
+    t.float "team2_odds"
     t.boolean "game_status"
     t.boolean "winner"
     t.string "sports"

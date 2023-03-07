@@ -7,6 +7,11 @@ class BetsController < ApplicationController
         render json: bets
     end
 
+    def show
+        bet = Bet.find(params[:id])
+        render json: bet, status: 200
+    end
+
     #create a new bet
     def create
         bet = Bet.create!(bet_tranasaction_params)
