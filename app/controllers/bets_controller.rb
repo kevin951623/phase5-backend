@@ -22,7 +22,7 @@ class BetsController < ApplicationController
     private
 
     def bet_tranasaction_params
-        params.permit(:user_id, :game_id, :team1_odds, :team2_odds, :payout, :bet_amount)
+        params.permit(:user_id, :game_id, :payout, :bet_amount)
     end
 
 
